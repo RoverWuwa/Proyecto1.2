@@ -1,0 +1,829 @@
+body {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    animation: fadeIn 1s ease-in; /* Animación de entrada */
+    background-color: f9f9f9;
+}
+
+@keyframes fadeIn { /* Animación de entrada */
+    from { /* Desde */
+        opacity: 0.8; /* Opacidad inicial */
+    }
+    to { /* Hasta */
+        opacity: 1; /* Opacidad final */
+    }
+}
+
+.hero-area {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para mejorar la legibilidad */
+}
+
+.navbar {
+    overflow: hidden; /* Contenedor principal de la barra de navegación */
+    padding: 0 20px; /* Espaciado interno de la barra */
+    position: fixed; /* Fija la barra en la parte superior de la página */
+    top: 0; /* Posición en la parte superior */
+    width: 100%; /* Ancho completo de la barra */
+    z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
+    background-color: transparent; /* Color de fondo inicial */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    color: white  ; /* Color del texto de la barra */
+}   
+    
+.scrolled {
+    background-color: #131212; /* Color de fondo cuando se desplaza la página */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    color: #333; /* Color del texto cuando se desplaza */
+}
+
+.navbar-title { 
+    float: left; /* Alinea el título a la izquierda */
+    font-size: 24px; /* Tamaño de fuente del título */
+    padding: 16px 30vw 16px 20px; /* Espaciado interno del título */
+    color: white; /* Color del texto del título */
+}
+
+.navbar a {
+    position: relative; /* Posición relativa para el efecto de subrayado */
+    float: left; /* Alinea los enlaces a la izquierda */
+    display: block; /* Muestra los enlaces como bloques */
+    color: white; /* Color del texto de los enlaces */
+    text-align: center; /* Alinea el texto al centro */
+    padding: 16px 20px; /* Espaciado interno de los enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+}
+
+.navbar a::after { /* Efecto de subrayado en los enlaces */
+    content: ''; /* Contenido vacío para el pseudo-elemento */
+    position: absolute; /* Posición absoluta para el subrayado */
+    bottom: 0; /* Posición en la parte inferior del enlace */
+    left: 50%; /* Centra el subrayado horizontalmente */
+    transform: translateX(-50%); /* Centra el subrayado */
+    width: 0; /* Ancho inicial del subrayado */
+    height: 2px; /* Altura del subrayado */
+    background-color: currentColor; /* Color del subrayado igual al color del texto */
+    transition: width 0.3s ease; /* Transición suave para el ancho del subrayado */
+}
+
+.navbar a:hover::after { 
+    width: 100%; /* Ancho completo del subrayado al pasar el mouse */
+}
+
+.navbar .right {
+    float: right; /* Alinea el botón a la derecha */
+    background-color: white; /* Color de fondo del botón */
+    color: #333; /* Color del texto del botón */
+    border-radius: 15px; /* Bordes redondeados del botón */
+    margin-right: 15px; /* Margen derecho del botón */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Transición suave para el efecto de escala */
+    display: inline-block; /* Muestra el botón como un bloque en línea */
+    text-decoration: none; /* Sin subrayado en el botón */
+}
+
+.navbar .right:hover { 
+    transform: scale(0.85); /* Efecto de escala al pasar el mouse */
+}
+
+.navbar .right:active {
+    transform: scale(1); /* Efecto de escala al hacer clic */
+}
+  
+/* Estilo del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-contenido {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 350px;
+    height: auto;
+    min-height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .modal.header {
+    background-color: #333; /* Color de fondo del encabezado del modal */
+    padding: 15px 20px; /* Espaciado interno del encabezado */
+    position: relative; /* Posición relativa para el efecto de cierre */
+  }
+
+  form {
+    margin-top: 40px;
+    color: #333; /* Color del texto del formulario */
+    gap: 30px; /* Espacio entre los elementos del formulario */
+  }
+
+  .acceso {
+    display: flex; /* Flexbox para alinear los elementos */
+    flex-direction: row; /* Dirección de los elementos */
+    justify-content: center; /* Espacio entre los elementos */
+  }
+
+  .acceso a {
+    display: flex; /* Flexbox para alinear los elementos */
+    flex-direction: column; /* Dirección de los elementos */
+    align-items: center; /* Alinea los elementos al centro */
+    color: #333;
+  }
+
+  .acceso a:hover {
+    text-decoration: none; /* Sin subrayado al pasar el mouse */
+  }
+
+  form a img {
+    margin-top: 40px;
+    padding: 0 30px; /* Espaciado interno de la imagen */
+    width: 80px; 
+ }
+
+ .acceso a span {
+    margin-top: 40px; /* Espacio entre la imagen y el texto */
+    font-size: 20px; /* Tamaño de fuente del texto */
+    color: #333; /* Color del texto */
+    text-align: center; /* Alinea el texto al centro */
+  }
+
+  .cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #131212;
+  }
+  
+.scrolled2 {
+    background-color: #333; /* Color de fondo del botón al desplazarse */
+    color: white; /* Color del texto del botón al desplazarse */
+}
+
+.navbar a.search:hover {
+    background-color: inherit;  /* Color de fondo del botón de búsqueda al pasar el mouse */
+}
+
+.navbar .search-container {
+    display: flex; /* Contenedor para la barra de búsqueda */
+    align-items: center; /* Alinea los elementos al centro */
+    padding-left: 10px; /* Espaciado interno a la izquierda */
+    position: relative; /* Posición relativa para el efecto de búsqueda */
+}
+  
+  /* Agrupa imagen + input */
+.navbar .search-box {
+    display: flex; /* Contenedor para la imagen y el input */
+    align-items: center; /* Alinea los elementos al centro */
+    position: relative; /* Posición relativa para el efecto de búsqueda */
+    margin: 0 10px 0 auto; /* Margen automático a la derecha */
+    padding: 5px; /* Espaciado interno */
+}
+  
+  /* Estilo de la lupa */
+.navbar .search-box .search img { 
+    width: 24px; /* Ancho de la imagen de búsqueda */
+    height: 24px; /* Alto de la imagen de búsqueda */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: margin-left 0.3s ease; /* Transición suave para el margen izquierdo */
+}
+  
+  /* Input de búsqueda oculto por defecto */
+.navbar .search-box .input-busqueda {
+    width: 0; /* Ancho inicial del input de búsqueda */
+    opacity: 0; /* Opacidad inicial del input de búsqueda */
+    margin-left: 10px; /* Margen izquierdo del input de búsqueda */
+    padding: 5px; /* Espaciado interno del input de búsqueda */
+    border-radius: 20px; /* Bordes redondeados del input de búsqueda */
+    transition: width 0.3s ease, opacity 0.3s ease; /* Transición suave para el ancho y la opacidad */
+    font-size: 14px; /* Tamaño de fuente del input de búsqueda */
+    background-color: white; /* Color de fondo del input de búsqueda */
+    color: #333; /* Color del texto del input de búsqueda */
+}
+  
+  /* Mostrar input al hacer hover en la caja */
+.navbar .search-box:hover .search img {
+    margin-left: -5px; /* Margen izquierdo de la imagen de búsqueda al hacer hover */
+}
+  
+.navbar .search-box:hover .input-busqueda {
+    width: 150px; /* Ancho del input de búsqueda al hacer hover */
+    opacity: 1; /* Opacidad del input de búsqueda al hacer hover */
+}
+
+/*Final de navbar*/
+
+/*Inicio de hero_area*/
+
+.hero_area {
+    top: 0; /* Posición en la parte superior */
+    background-image: url('../imagenes/ciudad.jpg'); /* Imagen de fondo */
+    background-repeat: no-repeat; /* No repetir la imagen de fondo */
+    background-size: cover; /* Tamaño de la imagen de fondo */
+    background-position: center; /* Centra la imagen de fondo */
+    height: 100vh; /* Altura de la sección hero */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: center; /* Alinea horizontalmente al centro */
+    color: white; /* Color del texto */
+    text-align: center; /* Alinea el texto al centro */
+    z-index: 0; /* Z-index para asegurar que esté detrás de otros elementos */
+}
+
+.hero_area::before {
+    content: ''; /* Contenido vacío para el pseudo-elemento */
+    position: absolute; /* Posición absoluta para el overlay */
+    top: 0; /* Posición en la parte superior */
+    left: 0; /* Posición a la izquierda */
+    width: 100%; /* Ancho completo del overlay */
+    height: 100%; /* Altura completa del overlay */
+    background-color: rgba(40, 40, 40, 0.3); /* Color de fondo del overlay con opacidad */
+    z-index: 1; /* Z-index para asegurar que esté por encima de la imagen de fondo */
+}
+
+/*Fin de hero_area*/
+
+/*Inicio de her-content*/
+
+.hero-content {
+    top: 0; /* Posición en la parte superior */
+    z-index: 2; /* Z-index para asegurar que esté por encima de otros elementos */
+    margin-bottom: 20px; /* Margen inferior */
+    margin-top: 160px; /* Margen superior */
+}
+
+.Bienvenida {
+    font-size: 25px; /* Tamaño de fuente */
+    font-weight: 500; /* Peso de la fuente */
+    text-align: center; /* Alinea el texto al centro */
+    color: white; /* Color del texto */
+    margin-bottom: 20px; /* Margen inferior */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transición suave para la transformación y opacidad */
+}
+
+  
+.Bienvenida.slide-out {
+    transform: translateX(-100%); /* Desplaza el texto a la izquierda */
+    opacity: 0; /* Opacidad cero */
+}
+  
+.Bienvenida.slide-in {
+    transform: translateX(100%); /* Desplaza el texto a la derecha */
+    opacity: 0; /* Opacidad cero */
+}
+  
+.Bienvenida.slide-show {
+    transform: translateX(0); /* Regresa a la posición original */
+    opacity: 1; /* Opacidad completa */
+}
+
+.Contactos {
+    padding-top: 25px; /* Espaciado superior */
+    font-size: 20px; /* Tamaño de fuente */
+}
+
+.Contactos p {
+    font-family: 'Orbitrion', sans-serif;
+}
+
+.Imagenes-contactos {
+    display: flex; /* Flexbox para alinear imágenes */
+    justify-content: center; /* Alinea horizontalmente al centro */
+    height: 19px; /* Altura de la sección */
+    gap: 60px; /* Espacio entre imágenes */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.Imagenes-contactos img {
+    transition: transform 0.3s ease;    /* Transición suave para la transformación */
+}
+
+.Imagenes-contactos img:hover {
+    transform: scale(1.5); /* Efecto de escala al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+.Imagenes-contactos img:active {
+    transform: scale(0.8); /* Efecto de escala al hacer clic */
+}
+
+.mas {
+    padding-top: 180px; /* Espaciado superior */
+    display: flex; /* Flexbox para alinear imágenes */
+    justify-content: center; /* Alinea horizontalmente al centro */
+}
+
+.mas img {
+    width: 30px; /* Ancho de las imágenes */
+    opacity: 1;     /* Opacidad completa */
+    animation: bounce 3s infinite; /* Animación de rebote */
+    transition: transform 0.3s ease; /* Transición suave para la transformación */
+}
+
+@keyframes bounce { /* Animación de rebote */
+    0%, 100% { /* Inicio y fin de la animación */
+        transform: translateY(0); /* Sin transformación */
+    }
+    50% { /* Mitad de la animación */
+        transform: translateY(20px); /* Desplazamiento hacia abajo */
+    }
+}
+
+.mas img:hover {
+    animation-play-state: paused; /* Pausa la animación al pasar el mouse */
+    transform: translateY(2px); /* Desplazamiento hacia abajo */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+.mas img:active {
+    transform: scale(0.8); /* Efecto de escala al hacer clic */
+}
+
+/*Fin de hero-content*/
+
+html {
+    scroll-behavior: smooth; /* Comportamiento de desplazamiento suave */
+}
+
+/*Inicio del contenido*/
+  
+.who-we-are {
+    display: flex; /* Flexbox para alinear imagen y texto */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Espacio entre la imagen y el texto */
+    gap: 2rem; /* Separación horizontal */
+    margin: 60px 0; /* Espacio arriba y abajo de la sección */
+}
+  
+  /* Columna de la imagen */
+.who-we-are .image-column {
+    flex: 1;  /* Que ocupe espacio flexible */
+    max-width: 50%; /* Limita la anchura a 50%, si quieres */
+}
+  
+.who-we-are .image-column img {
+    width: 100%; /* Asegura que la imagen se adapte al contenedor */
+    height: auto; /* Mantiene proporciones */
+    border-radius: 4px; /*Esquinas redondeadas */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* Sombrita leve */
+}
+  
+  /* Columna del texto */
+.who-we-are .text-column {
+    flex: 1; /* Que ocupe espacio flexible */
+    max-width: 50%; /* Limita la anchura a 50%, si quieres */
+}
+  
+  /* Estilo del título */
+.who-we-are .text-column h2 {
+    font-size: 2rem; /* Tamaño del título */
+    margin-bottom: 1rem; /* Espacio debajo del título */
+    color: #333; /* Color del título */
+}
+  
+  /* Estilo del párrafo */
+.who-we-are .text-column p { 
+    font-size: 1rem; /* Tamaño del párrafo */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #555; /* Color del párrafo */
+    margin-bottom: 1.5rem; /* Espacio debajo del párrafo */
+}
+  
+  /* Botón "Read More" */
+.btn-readmore {
+    display: inline-block; /* Muestra como bloque en línea */
+    background-color: #333; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 0.75rem 1.5rem; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    text-decoration: none;  /* Sin subrayado */
+    transition: background 0.3s ease, transform 0.2s; /* Transición suave para el fondo y la transformación */
+}
+  
+.btn-readmore:hover { 
+    background-color: #555; /* Color de fondo al pasar el mouse */
+    transform: scale(1.02); /* Efecto de escala al pasar el mouse */
+}
+
+.Opciones {
+    border-top: 1px solid black; /* Línea superior */
+    border-bottom: 1px solid black; /* Línea inferior */
+    display: flex; /* Flexbox para alinear opciones */
+    justify-content: space-between; /* Espacio entre las opciones */
+    padding: 4rem 2rem; /* Espaciado interno */
+    background-color: #f9f9f9; /* Color de fondo */
+}
+  
+.option {
+    width: 48%; /* Ancho de cada opción */
+    padding: 2rem; /* Espaciado interno */
+    background-color: white; /* Color de fondo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.03); /* Sombra leve */
+    text-align: center; /* Alinea el texto al centro */
+    border-radius: 8px; /* Bordes redondeados */
+}
+  
+.option h2 {
+    font-size: 1.5rem; /* Tamaño del título */
+    margin-bottom: 1rem; /* Espacio debajo del título */
+}
+  
+.option p {
+    margin-bottom: 1.5rem; /* Espacio debajo del párrafo */
+    color: #333; /* Color del párrafo */
+}
+  
+.option a {
+    display: inline-block; /* Muestra como bloque en línea */
+    padding: 0.75rem 1.5rem; /* Espaciado interno */
+    background-color: black; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background 0.3s ease; /* Transición suave para el fondo */
+}
+  
+  .option a:hover {
+    background-color: #333; /* Color de fondo al pasar el mouse */
+}
+
+.starts-container {
+    display: flex; /* Usamos Flexbox para colocar los bloques uno al lado del otro */
+    justify-content: space-between; /* Espacio entre los bloques */
+    max-width: 900px; /* Ancho máximo del contenedor de testimonios (ajusta según necesites) */
+    margin: 20px auto; /* Centrar el contenedor y agregar un poco de margen arriba y abajo */
+    padding: 20px; /* Un poco de padding dentro del contenedor */
+    gap: 30%; /* Espacio entre los bloques */
+    border-top: 1px solid black; /* Línea superior */
+    border-bottom: 1px solid black; /* Línea inferior */
+    margin-top: 250px; /* Espacio arriba */
+}
+  
+.start-block {
+    background-color: #f9f9f9; /* Un fondo claro como en la imagen */
+    border: 1px solid #eee; /* Un borde sutil */
+    padding: 20px;
+    text-align: center; /* Centrar el contenido dentro de cada bloque */
+    width: 48%; /* Aproximadamente el 48% del ancho para dejar espacio entre ellos */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
+    margin-right: 0;
+}
+  
+.start-block img {
+    width: 80px; /* Ajusta el tamaño de la imagen */
+    height: 80px;
+    border-radius: 50%; /* Para hacer la imagen circular */
+    object-fit: cover; /* Cubre el círculo sin deformar la imagen */
+    margin-bottom: 10px;
+}
+  
+.start-block h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #333; /* Color del título */
+}
+  
+.start-block .role {
+    font-style: italic;
+    color: #777; /* Color del rol */
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+  
+.start-block .quote {
+    margin: 0;
+    padding: 15px;
+    background-color: #fff; /* Fondo de la cita */
+    font-size: 0.95em;
+    color: #555; /* Color del texto de la cita */
+    text-align: center; /* Alinear el texto de la cita a la izquierda */
+}
+
+.quote a{
+    display: inline-block; /* Muestra como bloque en línea */
+    padding: 0.75rem 1.5rem; /* Espaciado interno */
+    background-color: black; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background 0.3s ease; /* Transición suave para el fondo */
+}
+  
+.start-block .quote::before {
+    content: "\201C"; /* Comillas izquierdas */
+    font-size: 2em; /* Tamaño de las comillas */
+    color: #ccc; /* Color de las comillas */
+    display: block; /* Muestra como bloque */ 
+    margin-bottom: -10px; /* Espacio debajo de las comillas */
+    text-align: left; /* Alinear a la izquierda */
+}
+
+.target_section {
+    padding: 30px 0; /* Espaciado arriba y abajo */
+    background-color: #222; /* Un fondo oscuro como en la imagen */
+    color: #fff; /* Texto blanco */
+    margin-top: 250px; /* Espacio arriba */
+}
+  
+.container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto;     /* Centrar el contenedor */
+    padding: 0 20px; /* Espaciado a los lados */
+}
+  
+.row {
+    display: flex;  /* Usamos Flexbox para colocar los bloques uno al lado del otro */
+    flex-wrap: wrap; /* Permitimos que se envuelvan si no hay suficiente espacio */
+    justify-content: space-around; /* Espacio entre y alrededor de los bloques */
+}
+  
+.col-md-3 {
+    flex-basis: calc(25% - 20px); /* Aproximadamente 25% del ancho */
+    margin-bottom: 20px; /* Espacio entre filas si se envuelven */
+    text-align: center;
+}
+  
+.detail-box h2 {
+    font-size: 2.5em; /* Tamaño del título */
+    margin-bottom: 5px;     /* Espacio debajo del título */
+    font-weight: bold; /* Peso de la fuente */
+    color: #ddd; /* Color del título */
+}
+  
+.detail-box h5 {
+    font-size: 1em; /* Tamaño del subtítulo */
+    color: #ddd; /* Color del subtítulo */
+    margin-top: 0; /* Espacio arriba */
+    font-weight: normal; /* Peso de la fuente */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Fuente general */
+    background-color: #f4f4f4; /* Color de fondo */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin padding */
+}
+  
+.destacados {
+    max-width: 1100px; /* Ancho máximo del contenedor */
+    margin: auto; /* Centrar el contenedor */
+    padding: 40px 20px; /* Espaciado interno */
+    text-align: center; /* Alinear el texto al centro */
+    margin-top: 160px; /* Espacio arriba */
+}
+  
+.subtitulo {
+    color: #666; /* Color del subtítulo */
+    margin-bottom: 40px; /* Espacio debajo del subtítulo */
+}
+  
+.contenedor-cards {
+    display: grid; /* Usamos Grid para organizar las tarjetas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas automáticas con un mínimo de 280px */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+  
+.card {
+    background: white; /* Color de fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el desbordamiento */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra leve */
+    transition: transform 0.2s;     /* Transición suave para la transformación */
+} 
+  
+.card:hover {
+    transform: scale(1.03); /* Efecto de escala al pasar el mouse */
+}
+  
+.card img {
+    width: 100%; /* Ancho completo de la tarjeta */
+    height: 180px; /* Altura fija de la imagen */
+    object-fit: cover; /* Cubre el área sin deformar la imagen */
+}
+  
+.card .contenido {
+    padding: 15px; /* Espaciado interno */
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+  
+.card h3 {
+    margin-top: 0; /* Sin margen superior */
+    font-size: 18px; /* Tamaño del título */
+}
+  
+.card p {
+    color: #555; /* Color del párrafo */
+    font-size: 14px; /* Tamaño del párrafo */
+}
+
+.navegacion {       
+    margin-top: 30px; /* Espacio arriba */
+    display: flex; /* Flexbox para alinear los botones */
+    justify-content: center; /* Alinear horizontalmente al centro */
+    gap: 20px; /* Espacio entre los botones */
+}
+  
+.btn-flecha {
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    padding: 5px; /* Espaciado interno */
+    margin: 0 15px; /* Margen a los lados */
+    transition: transform 0.2s; /* Transición suave para la transformación */
+    background-color: #222; /* Color de fondo */
+    border-radius: 50%; /* Bordes redondeados */
+}
+  
+.btn-flecha img {
+    width: 40px; /* Ancho de la imagen */
+    height: auto; /* Mantiene proporciones */
+}
+  
+.btn-flecha:hover {     
+    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+}  
+
+/*Inicio del footer*/
+
+footer {
+    background-color: #1e1e1e; /* Un fondo oscuro como en la imagen */
+    color: #fff; /* Texto blanco */
+    padding: 30px 0; /* Espacio arriba y abajo */
+    margin-top: 150px; /* Espacio arriba */
+}
+  
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre las secciones */
+    align-items: flex-start; /* Alinear las secciones en la parte superior */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 0 20px; /* Espacio a los lados */
+    flex-wrap: wrap; /* Permitir que las secciones se envuelvan en pantallas más pequeñas */
+}
+  
+.footer-info,
+.footer-links,
+.footer-social,
+.footer-newsletter {
+    margin-bottom: 20px; /* Espacio entre las secciones en pantallas pequeñas */
+}
+  
+.footer-info {
+    width: 30%; /* Aproximadamente el ancho de la sección de información */
+}
+  
+.logo-info img {
+    max-width: 100px; /* Ajusta el tamaño de tu logo */
+    margin-bottom: 10px; /* Espacio debajo del logo */
+    border-radius: 50%; /* Bordes redondeados para el logo */
+}
+  
+.contact-info p {
+    margin-bottom: 5px; /* Espacio entre los párrafos */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+}
+  
+.contact-info i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    color: #ccc; /* Color de los iconos */
+}
+  
+.footer-links {
+    width: 15%; /* Ancho aproximado de la sección de enlaces */
+}
+  
+.footer-links h3,
+.footer-social h3,
+.footer-newsletter h3 {
+    color: #ccc; /* Color de los títulos */
+    margin-bottom: 15px; /* Espacio debajo del título */
+    font-size: 1.1em; /* Tamaño de fuente del título */
+}
+  
+.footer-links ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin espaciado interno */
+}
+  
+.footer-links li {
+    margin-bottom: 8px; /* Espacio entre los enlaces */
+}
+  
+.footer-links a {
+    color: #fff; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+}
+  
+.footer-links a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+  
+.footer-social {
+    width: 20%; /* Ancho aproximado de la sección de redes sociales */
+}
+  
+.social-icons a {
+    display: inline-block; /* Muestra como bloque en línea */
+    width: 35px; /* Ancho de los iconos */
+    height: 35px; /* Alto de los iconos */
+    background-color: #333; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border-radius: 50%; /* Bordes redondeados */
+    text-align: center; /* Alinea el texto al centro */
+    line-height: 35px; /* Centra verticalmente el texto */
+    font-size: 1.2em; /* Tamaño de fuente */
+    margin-right: 10px; /* Espacio entre los iconos */
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+}
+  
+.social-icons a:hover {
+    background-color: #555; /* Color de fondo al pasar el mouse */
+}
+  
+.footer-newsletter {
+    width: 30%; /* Ancho aproximado de la sección del newsletter */
+}
+  
+.footer-newsletter form {
+    display: flex; /* Flexbox para alinear los elementos */
+    flex-direction: column; /* Coloca los elementos en columna */
+}
+  
+.footer-newsletter input[type="text"], 
+.footer-newsletter input[type="email"] {
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espacio entre los inputs */
+    border: none; /* Sin borde */
+    background-color: #333; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+}
+  
+.footer-newsletter button[type="submit"] {
+    background-color: #f0ad4e; /* Un color de acento */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-weight: bold; /**/
+    transition: background-color 0.3s ease;
+}
+  
+.footer-newsletter button[type="submit"]:hover {
+    background-color: #e09b38; /* Color de fondo al pasar el mouse */
+}
+  
+.footer-bottom {
+    background-color: #333; /* Color de fondo */
+    text-align: center; /* Alinea el texto al centro */
+    padding: 15px 0; /* Espacio arriba y abajo */
+    font-size: 0.8em; /* Tamaño de fuente más pequeño */
+}
+  /*Media para adaptar a pantallas mas pequeñas*/
+@media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column; /* Apilar las secciones en pantallas pequeñas */
+      align-items: center; /* Centrar las secciones */
+      text-align: center; /* Centrar el texto dentro de las secciones */
+    }
+  
+  
+    .footer-info,
+    .footer-links,
+    .footer-social,
+    .footer-newsletter {
+      width: 80%; /* Ocupar más ancho en pantallas pequeñas */
+      margin-bottom: 30px; /* Espacio entre las secciones */
+    }
+  
+    .footer-info {
+      width: 80%; /* Ocupar más ancho en pantallas pequeñas */
+    }
+  
+    .footer-links ul { 
+      text-align: center; /* Centrar los enlaces */
+    }
+  
+    .footer-social .social-icons {
+      display: flex; /* Flexbox para alinear iconos */
+      justify-content: center; /* Centrar los iconos */
+    }
+  
+    .footer-newsletter form { 
+      width: 80%; /* Ocupar más ancho en pantallas pequeñas */
+      margin: 0 auto; /* Centrar el formulario */
+    }
+
+}

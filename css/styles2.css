@@ -1,0 +1,25 @@
+.mas img {
+    width: 30px;
+    opacity: 1;
+    animation: bounce 3s infinite;
+    transition: transform 0.3s ease;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+.mas img:hover {
+    animation-play-state: paused;
+    transform: translateY(2px);
+    cursor: pointer;
+}
+
+.mas img:active {
+    transform: scale(0.8);
+}

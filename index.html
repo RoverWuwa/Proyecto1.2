@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra de Navegación</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="hero_area">  
+    <div class="navbar">
+      <div class="navbar-title">Mi sitio</div>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#login" class="right" id="miBoton">Iniciar Sesion</a>
+      <!-- El modal (inicialmente oculto) -->
+      <div id="miModal" class="modal">
+        <div class="modal-contenido">
+          <div class="modal-header">
+            <span class="cerrar">&times;</span> 
+          </div>  
+          <form>
+            <h2>Selecciona tu metodo de acceso</h2>
+            <div class="acceso">
+              <a href="sesionEmpresa.html" target="_blank">
+                <img src="imagenes/users-alt.png" alt="">
+                <span>Empresas</span>
+              </a>
+              <a href="sesionCandidato.html" target="_blank">
+                <img src="imagenes/user.png" alt="">
+                <span>Candidatos</span>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="search-container">
+        <div class="search-box">
+         <!-- <div> Icons made by <a href="https://www.flaticon.com/authors/chanut" title="Chanut"> Chanut </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div> -->
+          <a href="#searcher" class="search"><img src="imagenes/magnifying-glass.png" alt="Buscar"></a>
+          <input type="text" placeholder="Buscar..." class="input-busqueda" id="searcher">
+        </div>
+      </div>
+   </div>
+    <div class="hero-content">
+        <span class="Bienvenida">
+          <h1>Explora nuevas oportunidades a obtener</h1>
+          <p>Todo es imposible, hasta que lo haces</p>
+        </span>
+      <div class="Contactos">
+        <p>Contactanos</p>
+        <div class="Imagenes-contactos">
+          <img src="imagenes/twitter.png" alt="">
+          <img src="imagenes/facebook.png" alt="">
+          <img src="imagenes/instagram.png" alt="">
+        </div>
+        <div class="mas">
+          <!--<a href="https://www.flaticon.com/free-icons/down-arrow" title="down arrow icons">Down arrow icons created by Gregor Cresnar - Flaticon</a> -->
+          <img src="imagenes/down-arrow.png" alt="">
+        </div>
+      </div>
+    </div>
+ </div>
+ <div class="contenido">
+    <section class="container who-we-are">
+      <div class="image-column">
+        <img src="imagenes/who-we-are.webp" alt="Descripción de la imagen">
+      </div>
+      <div class="text-column">
+        <h2>¿QUIEN SOMOS?</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+          veniam, quis nostrud exercitation...
+        </p>
+        <a href="#" class="btn-readmore">Read More</a>
+      </div>
+    </section>
+    <section class="starts-container">
+      <div class="start-block">
+        <p class="role">¿Tienes o eres una empresa?</p>
+        <img src="imagenes/usuario.jpg" alt="Persona 1">
+        <h3>REGISTRATE COMO EMPLEADOR</h3>
+        <blockquote class="quote">
+          <p>Publica ofertas de trabajo y encuentra talento fácilmente.</p>
+          <a href="#">Comenzar</a>
+        </blockquote>
+      </div>
+      <div class="start-block">
+        <p class="role">¿Buscas trabajo?</p>
+        <img src="imagenes/usuario.jpg" alt="Persona 2">
+        <h3>REGISTRATE</h3>
+        <blockquote class="quote">
+          <p>Registrate gratis y accede a vacantes de de empresas o lugares que buscan talento como el tuyo</p>
+          <a href="#">Ver oportunidades</a>
+        </blockquote>
+      </div>
+    </section>
+    <section class="target_section layout_padding2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="detail-box">
+              <h2>
+                1000+
+              </h2>
+              <h5>
+                Years of Business
+              </h5>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="detail-box">
+              <h2>
+                20000+
+              </h2>
+              <h5>
+                Projects Delivered
+              </h5>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="detail-box">
+              <h2>
+                10000+
+              </h2>
+              <h5>
+                Satisfied Customers
+              </h5>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="detail-box">
+              <h2>
+                1500+
+              </h2>
+              <h5>
+                Cups of Coffee
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ </div>
+ <section class="destacados">
+    <h2>Vacantes Destacadas</h2>
+    <p class="subtitulo">Las ofertas más recientes y populares del momento.</p>
+    
+    <div class="contenedor-cards" id="contenedor-cards">
+      <!-- Las tarjetas se insertarán aquí dinámicamente -->
+    </div>
+      <!-- <a href="https://www.flaticon.com/free-icons/next" title="next icons">Next icons created by Roundicons - Flaticon</a> -->
+      <!-- <a href="https://www.flaticon.com/free-icons/next" title="next icons">Next icons created by Roundicons - Flaticon</a> -->
+      <div class="navegacion">
+        <button id="anterior" class="btn-flecha">
+          <img src="imagenes/arrow-noti.png" alt="Anterior">
+        </button>
+        <button id="siguiente" class="btn-flecha">
+          <img src="imagenes/arrow-noti2.png" alt="Siguiente">
+        </button>
+      </div>
+  </section>
+
+ <footer>
+  <div class="footer-container">
+    <div class="footer-info">
+      <div class="logo-info">
+        <img src="imagenes/logo2.webp" alt="">
+        <p>Tu lema o una breve descripción.</p>
+      </div>
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> 641-754-8072</p>
+        <p><i class="fas fa-envelope"></i> Gavit.Ma@hyda.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 1718 Park Boulevard Marshalltown, IA 50158</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h3>ENLACES</h3>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <h3>REDES SOCIALES</h3>
+      <div class="social-icons">
+        <a href="#" target="_blank"><img src="imagenes/facebook.png" alt=""></a>
+        <a href="#" target="_blank"><img src="imagenes/twitter.png" alt=""></a>
+        <a href="#" target="_blank"><img src="imagenes/instagram.png" alt=""></i></a>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <h3>BOLETIN INFORMATIVO</h3>
+      <form>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Your Email">
+        <button type="submit">></button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; CBTis 52, 4Am Programacion, Equipo 10</p>
+  </div>
+</footer>
+
+  <script src="js/scripts.js"></script>
+  <script src="js/scripts2.js"></script>
+  <script src="js/scripts3.js"></script>
+
+</body>
+</html>

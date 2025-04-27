@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro</title>
+  <link rel="stylesheet" href="css/styles4.css">
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <div class="lado-izquierdo">
+      <h1>Crea tu cuenta gratis</h1>
+      <p>Explora todas nuestras funciones para individuos y organizaciones.</p>
+      <img src="https://via.placeholder.com/300x300" alt="Imagen decorativa">
+    </div>
+
+    <div class="lado-derecho">
+      <form class="formulario">
+        <h2>Regístrate</h2>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Contraseña" required>
+
+        <label for="username">Nombre de usuario</label>
+        <input type="text" id="username" placeholder="Nombre de usuario" required>
+
+        <label for="pais">País/Región</label>
+        <select id="pais" required>
+          <option value="">Selecciona tu país</option>
+          <option value="mx">México</option>
+          <option value="es">España</option>
+          <option value="ar">Argentina</option>
+          <!-- Agrega más países si quieres -->
+        </select>
+
+        <div class="opciones">
+          <input type="checkbox" id="updates">
+          <label for="updates">Recibir actualizaciones de productos</label>
+        </div>
+
+        <button type="submit">Continuar</button>
+
+        <p class="condiciones">
+          Al registrarte, aceptas nuestros <a href="#">Términos</a> y <a href="#">Política de Privacidad</a>.
+        </p>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>
