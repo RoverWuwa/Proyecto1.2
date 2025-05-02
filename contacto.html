@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel ="stylesheet" href="css/styles.css">
+    <link rel ="stylesheet" href="css/styles5.css">
+    </head>
+<body>
+    <div class="hero_area">  
+        <div class="navbar">
+          <div class="navbar-title">Mi sitio</div>
+          <a href="#inicio">Inicio</a><!-- Enlace a la sección de inicio -->
+          <a href="#servicios">Servicios</a><!-- Enlace a la sección de servicios -->
+          <a href="#nosotros">Nosotros</a><!-- Enlace a la sección de nosotros -->
+          <a href="contacto.html">Contacto</a><!-- Enlace a la página de contacto -->
+          <a href="#login" class="right" id="miBoton">Iniciar Sesion</a><!---->
+    <main>
+        <section class="contact-section">
+            <h1><b>CONTACTO</b></h1><!-- Título de la sección de contacto en negrita -->
+<p>Si tienes alguna pregunta, no dudes en contactarnos utilizando el siguiente formulario:</p> <!-- Instrucciones para el usuario -->    
+
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> <!-- es para recibir los mensajes de los usuarios -->
+                <label for="nombre">Nombre:</label> <!-- Etiqueta para el campo de nombre -->
+                <input type="text" id="nombre" name="nombre" required><!-- Campo de entrada para el nombre -->
+
+                <label for="email">Correo Electrónico:</label><!-- Etiqueta para el campo de correo electrónico -->
+                <input type="email" id="email" name="email" required><!-- Campo de entrada para el correo electrónico -->
+
+                <label for="mensaje">Mensaje:</label> <!-- Etiqueta para el campo de mensaje -->
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea><!-- Área de texto para el mensaje -->
+
+                <button type="submit">Enviar</button> <!--boton para enviar todos los datos-->
+            </form>
+        </section>
+    </main>
+</body>
+</html>
