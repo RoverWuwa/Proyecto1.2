@@ -683,7 +683,7 @@ footer {
 }
   
 .logo-info img {
-    max-width: 100px; /* Ajusta el tamaño de tu logo */
+    max-width: 100px; /* Ajusta el tamaño del logo */
     margin-bottom: 10px; /* Espacio debajo del logo */
     border-radius: 50%; /* Bordes redondeados para el logo */
 }
@@ -791,7 +791,7 @@ footer {
     padding: 15px 0; /* Espacio arriba y abajo */
     font-size: 0.8em; /* Tamaño de fuente más pequeño */
 }
-  /*Media para adaptar a pantallas mas pequeñas*/
+  /*Media para adaptar a pantallas mas pequeñas(intento de un tutorial)*/
 @media (max-width: 768px) {
     .footer-container {
       flex-direction: column; /* Apilar las secciones en pantallas pequeñas */
