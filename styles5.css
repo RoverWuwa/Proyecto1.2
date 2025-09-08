@@ -1,0 +1,47 @@
+.contact-section {
+    padding: 20px;/* Espaciado interno de 20px alrededor del contenido */
+    max-width: 600px;/* Ancho máximo de la sección de contacto */
+    margin: 20px auto;/* Margen superior e inferior de 20px, centrado horizontalmente */
+    border-radius: 5px; /* Bordes redondeados de 5px */
+    box-shadow: 0 0 10px rgba;/* Sombra suave alrededor de la sección */
+}
+
+.contact-section h1 {
+    text-align: center;/* Centra el texto del encabezado */
+    margin: 20px 0;/* Margen superior e inferior de 20px */
+    font-weight: bold;/* Hace el texto del encabezado en negrita */
+}
+
+.contact-section form {
+    display: flex;/* Activa el modelo de caja flexible para el formulario */
+    flex-direction: column; /* Organiza los elementos del formulario en una columna */
+}
+
+.contact-section label {
+    margin: 10px 0 5px; /* Margen superior de 10px, margen inferior de 5px */
+    color: aliceblue;/* Color del texto de las etiquetas */
+    font-weight: bold;/* Hace el texto de las etiquetas en negrita */
+    
+}
+
+.contact-section input, 
+.contact-section textarea {
+    padding: 5px;/* Espaciado interno de 5px en los campos de entrada y área de texto */
+    margin-bottom: 3px;/* Margen inferior de 3px para separar los campos */
+    border: 1px solid #6e6e6e; /* Borde de 1px de color gris oscuro */
+    border-radius: 5px;/* Bordes redondeados de 5px para los campos */
+}
+
+.contact-section button {
+    padding: 10px; /* Espaciado interno de 10px en el botón */
+    background-color: #333; /* Color de fondo del botón */
+    color: rgb(228, 228, 228);/* Color del texto del botón */
+    border: none;/* Sin borde en el botón */
+    border-radius: 5px;/* Bordes redondeados de 5px para el botón */
+    cursor: pointer;/* Cambia el cursor a una mano al pasar sobre el botón */
+    font-weight: bold; /* Hace el texto del botón en negrita */
+}
+
+.contact-section button:hover {
+    background-color: #555;/* Cambia el color de fondo del botón al pasar el mouse */
+}
